@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CurrencySetupController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/setup-currency-rates', [CurrencySetupController::class, 'setupCurrencyRates']);
+
+
+Route::post('/search-product', [ProductController::class, 'searchProduct']);
 Route::post('/product', [ProductController::class, 'addProduct']);
 Route::put('/product/{product_id}', [ProductController::class, 'updateProduct']);
 Route::delete('/product/{product_id}', [ProductController::class, 'deleteProduct']);
