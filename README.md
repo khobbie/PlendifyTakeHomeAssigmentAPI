@@ -21,9 +21,8 @@ In the terminal `homework/backend/`
 Application runs on : <http://127.0.0.1:8000/>
 
 
-Backend : <http://127.0.0.1:8000/>
+Backend : <http://127.0.0.1:8000/api>
 
-Live BaseURL : <https://ghanapost-gps-api.herokuapp.com>
 
 ### Checkout the Postman Documentation for the APIs
 

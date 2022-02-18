@@ -3,7 +3,7 @@ $(document).ready(function() {
         $("#loading_div").css("display", "block");
         $("#display_div").css("display", "none");
 
-        let url = "http://127.0.0.1:8000/api/search-product";
+        let url = base_url + "/search-product";
         let search_text = $("#search_text").val();
 
         $.ajax({

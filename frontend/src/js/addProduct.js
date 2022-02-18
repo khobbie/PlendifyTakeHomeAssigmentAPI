@@ -17,7 +17,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "http://127.0.0.1:8000/api/product",
+            url: base_url + "/product",
             data: data,
             success: function(res) {
                 if (res.code == "000") {

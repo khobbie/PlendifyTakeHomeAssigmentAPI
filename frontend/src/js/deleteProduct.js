@@ -19,7 +19,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "DELETE",
-            url: "http://127.0.0.1:8000/api/product/" + product_uuid,
+            url: base_url + "/product/" + product_uuid,
 
             success: function(res) {
                 if (res.code == "000") {

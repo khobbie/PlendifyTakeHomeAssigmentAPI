@@ -33,7 +33,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "PUT",
-            url: "http://127.0.0.1:8000/api/product/" + product_uuid,
+            url: base_url + "/product/" + product_uuid,
             data: data,
             success: function(res) {
                 if (res.code == "000") {

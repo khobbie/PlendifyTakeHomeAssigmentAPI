@@ -13,14 +13,14 @@ $(document).ready(function() {
         $("#loading_div").css("display", "block");
         $("#display_div").css("display", "none");
 
-        let url = "http://127.0.0.1:8000/api/product";
+        let url = base_url + "/product";
         if (product_id.trim() == "") {} else {
             url = url + "/" + product_id;
         }
 
         $.ajax({
             type: "GET",
-            url: "http://127.0.0.1:8000/api/product",
+            url: base_url + "/product",
 
             success: function(res) {
                 console.log(res);
