@@ -47,9 +47,9 @@
 
                     <div class="col-md-3 col-sm-12">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-sm btn-primary float-right" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal"
                             data-bs-target="#createModal">
-                            Create new product
+                            New product
                         </button>
 
 
@@ -256,7 +256,12 @@
     -->
 
     <script>
+        let base_url = "http://127.0.0.1:8000/api"
+
         $(document).ready(function() {
+
+
+
 
             function showAlert(icon, message) {
                 Swal.fire({
@@ -305,7 +310,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "http://127.0.0.1:8000/api/product",
+                    url: base_url + "/product",
                     data: data,
                     success: function(res) {
                         if (res.code == '000') {
@@ -349,7 +354,7 @@
                 $("#loading_div").css("display", "block");
                 $("#display_div").css("display", "none");
 
-                let url = "http://127.0.0.1:8000/api/product";
+                let url = base_url + "/product";
                 if (product_id.trim() == "") {
 
                 } else {
@@ -358,7 +363,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: "http://127.0.0.1:8000/api/product",
+                    url: base_url + "/product",
 
                     success: function(res) {
                         console.log(res)
@@ -421,7 +426,7 @@
                 $("#loading_div").css("display", "block");
                 $("#display_div").css("display", "none");
 
-                let url = "http://127.0.0.1:8000/api/search-product";
+                let url = base_url + "/search-product";
                 let search_text = $("#search_text").val()
 
                 $.ajax({
@@ -508,7 +513,7 @@
                 $("#delete_id").val(product_uuid)
                 $("#delete_name").text(product_name)
             })
-           
+
 
             $("#search_form").submit(function(e) {
 
@@ -539,7 +544,7 @@
 
                 $.ajax({
                     type: "DELETE",
-                    url: "http://127.0.0.1:8000/api/product/" + product_uuid,
+                    url: base_url + "/product/" + product_uuid,
 
                     success: function(res) {
                         if (res.code == '000') {
@@ -594,7 +599,7 @@
 
                 $.ajax({
                     type: "PUT",
-                    url: "http://127.0.0.1:8000/api/product/" + product_uuid,
+                    url: base_url + "/product/" + product_uuid,
                     data: data,
                     success: function(res) {
                         if (res.code == '000') {
