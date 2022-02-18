@@ -14,7 +14,7 @@ MySQL : Create database  `plendify`
 Run the sql query located in `backend/db_query/plendify.sql`
 
 
-In the terminal `backend/`
+In the terminal `homework/backend/`
 
     php artisan serve
 
